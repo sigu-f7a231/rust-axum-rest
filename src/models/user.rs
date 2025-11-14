@@ -1,11 +1,12 @@
-#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct User {
     pub id: u64,
     pub name: String,
 }
 
-// POST用にクライアントが送る構造体
-#[derive(Clone, Debug, serde::Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 pub struct NewUser {
     pub name: String,
 }
